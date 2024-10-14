@@ -25,8 +25,12 @@ local function get_full_mode_name()
     end
 end
 
+local function get_status_line_string()
+    return get_full_mode_name()
+end
+
 M = {
-    get_full_mode_name = get_full_mode_name
+    get_status_line_string = get_status_line_string
 }
 
 return M
