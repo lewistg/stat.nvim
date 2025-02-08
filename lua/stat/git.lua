@@ -15,9 +15,10 @@ local function get_branch_name()
     local file_dir = vim.fn.expand('%:p:h')
     local git_command = string.format('git -C %s branch --show-current', file_dir)
     local out_file = io.popen(git_command, 'r')
-    return out_file:read('*l')
+    local branch_name = out_file:read('*l') or 'detached HEAD'
+    out_file:close()
+    return branch_name
 end
-
 
 local function get_status_line_string(args)
     if not file_in_repo() then
