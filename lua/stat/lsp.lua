@@ -39,7 +39,6 @@ local function get_status_line_string(args)
     end
 
     local show_client_name = (args and args.show_client_name == nil) and true or args.show_client_name
-    print((args and args.show_client_name ~= nil))
 
     local status_string = {
         '🛠',
